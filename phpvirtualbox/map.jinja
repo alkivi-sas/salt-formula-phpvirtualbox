@@ -1,0 +1,11 @@
+{% set phpvirtualbox = salt['grains.filter_by']({
+    'Debian': {
+        'directory': '/home/phpvirtualbox/',
+        'archive': 'phpvirtualbox-5.0-5.zip',
+        'url': 'https://freefr.dl.sourceforge.net/project/phpvirtualbox/phpvirtualbox-5.0-5.zip',
+        'hash': 'c80c423fda30e5795872c9b9adc68429deee5726e468729472a573c324303c05',
+        'user': 'phpvirtualbox',
+        'password': 'phpvirtualbox',
+        },
+}, grain='os', default='Debian', merge=salt['pillar.get']('phpvirtualbox')) %}
+
